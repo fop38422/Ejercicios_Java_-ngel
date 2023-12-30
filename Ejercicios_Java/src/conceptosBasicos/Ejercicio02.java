@@ -8,7 +8,7 @@ un máximo de 15 dígitos, de los
 cuales dos se utilizarán para la
 parte decimal.*/
 
-public class Ejercicio2 {
+public class Ejercicio02 {
 
 	public static void main(String[] args) {
 		System.out.printf("%-15.2f", 1234f / 532f);

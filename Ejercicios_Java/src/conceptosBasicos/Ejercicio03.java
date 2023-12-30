@@ -8,7 +8,7 @@ la conversión se mostrará en la
 salida estándar con una precisión
 de 2 decimales*/
 
-public class Ejercicio3 {
+public class Ejercicio03 {
 
 	public static void main(String[] args) {
 		
@@ -16,7 +16,7 @@ public class Ejercicio3 {
 		Scanner sc = new Scanner(System.in);
 		
 		//imprimir el título y la pedida del valor en euros
-		System.out.print("CALCULADORA DE CONVERSIÓN DE EUROS A DÓLARES\nIntroduce un número de euros: ");
+		System.out.print("CALCULADORA DE CONVERSIÓN DE EUROS A DÓLARES\nIntroduce un número de euros (decimales con coma): ");
 		
 		//guardar el valor introducido arriba en la variable para euros
 		double eu = sc.nextDouble();
