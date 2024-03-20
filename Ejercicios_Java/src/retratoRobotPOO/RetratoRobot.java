@@ -1,49 +1,40 @@
 package retratoRobotPOO;
 
-import java.util.Scanner;
+public class RetratoRobot {
+	private static final String[][] OPCIONES = {
+			{ "WWWWWWWWW", "\\\\\\//////", "|\"\"\"\"\"\"\"|", "|||||||||" },
+			{ "|  O O  |", "|-(· ·)-|", "|-(o o)-|", "|  \\ /  |" },
+			{ "@   J   @", "{   \"   }", "[   j   ]", "<   -   >" },
+			{ "|  ===  |", "|   -   |", "|  ___  |", "|  ---  |" },
+			{ " \\_____/ ", " \\,,,,,/ " } };
 
-class RetratoRobot {
-    private String pelo;
-    private String ojos;
-    private String nariz;
-    private String boca;
+	private int[] elecciones = new int[OPCIONES.length];
 
-    public RetratoRobot(String pelo, String ojos, String nariz, String boca) {
-        this.pelo = pelo;
-        this.ojos = ojos;
-        this.nariz = nariz;
-        this.boca = boca;
-    }
+	public RetratoRobot(int pelo, int ojos, int nariz, int boca, int barbilla) {
+		elecciones[0] = pelo;
+		elecciones[1] = ojos;
+		elecciones[2] = nariz;
+		elecciones[3] = boca;
+		elecciones[4] = barbilla;
+	}
 
-    public void mostrarRetrato() {
-        System.out.println(pelo);
-        System.out.println(ojos);
-        System.out.println(nariz);
-        System.out.println(boca);
-    }
+	public RetratoRobot() {
+		elecciones[0] = (int) (Math.random() * OPCIONES[0].length);
+		elecciones[1] = (int) (Math.random() * OPCIONES[1].length);
+		elecciones[2] = (int) (Math.random() * OPCIONES[2].length);
+		elecciones[3] = (int) (Math.random() * OPCIONES[3].length);
+		elecciones[4] = (int) (Math.random() * OPCIONES[4].length);
+	}
 
-    public static String obtenerOpcion(Scanner sc) {
-        int opcion;
-        do {
-            System.out.print("Ingresa un número de opción válido: ");
-            while (!sc.hasNextInt()) {
-                System.out.print("Por favor, ingresa un número válido: ");
-                sc.next();
-            }
-            opcion = sc.nextInt();
-        } while (opcion < 1 || opcion > 4);
-
-        switch (opcion) {
-            case 1:
-                return "1. WWWWWWWWW";
-            case 2:
-                return "2. \\\\\\//////";
-            case 3:
-                return "3. |\"\"\"\"\"\"\"|";
-            case 4:
-                return "4. |||||||||";
-            default:
-                return "";
-        }
-    }
+	@Override
+	public String toString() {
+		return OPCIONES[0][elecciones[0]] + "\n" + OPCIONES[1][elecciones[1]] + "\n" + OPCIONES[2][elecciones[2]] + "\n" + OPCIONES[3][elecciones[3]] + "\n"
+				+ OPCIONES[4][elecciones[4]];
+	}
+	
+	public static void main(String[] args) {
+		RetratoRobot aleatorio = new RetratoRobot();
+		
+		System.out.println(aleatorio.toString());
+	}
 }
