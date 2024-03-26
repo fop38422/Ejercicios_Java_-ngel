@@ -11,6 +11,22 @@ public class RetratoRobot {
 	private int[] elecciones = new int[OPCIONES.length];
 
 	public RetratoRobot(int pelo, int ojos, int nariz, int boca, int barbilla) {
+		if (pelo >= OPCIONES[0].length) {
+			throw new IllegalArgumentException("Introduce un valor de pelo válido y vuelve a intentarlo.");
+		}
+		if (ojos >= OPCIONES[1].length) {
+			throw new IllegalArgumentException("Introduce un valor de ojos válido y vuelve a intentarlo.");
+		}
+		if (nariz >= OPCIONES[2].length) {
+			throw new IllegalArgumentException("Introduce un valor de nariz válido y vuelve a intentarlo.");
+		}
+		if (boca >= OPCIONES[3].length) {
+			throw new IllegalArgumentException("Introduce un valor de boca válido y vuelve a intentarlo.");
+		}
+		if (barbilla >= OPCIONES[4].length) {
+			throw new IllegalArgumentException("Introduce un valor de barbilla válido y vuelve a intentarlo.");
+		}
+		
 		elecciones[0] = pelo;
 		elecciones[1] = ojos;
 		elecciones[2] = nariz;
